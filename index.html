@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>+100 Recetas Vegetarianas en Air Fryer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --olive-950:#232A1B;
+    --olive-800:#3C4429;
+    --olive-600:#5B6A3C;
+    --olive-500:#77875099;
+    --olive-tint:#EDEFE1;
+    --cream:#FBF6EC;
+    --cream-deep:#F3ECDC;
+    --paper:#FFFDF9;
+    --terracotta:#C1683B;
+    --terracotta-deep:#A3502A;
+    --terracotta-tint:#F3DCC8;
+    --ink:#292A20;
+    --ink-soft:#5B5B4F;
+    --line: rgba(41,42,32,0.12);
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+    --shadow-soft: 0 18px 40px -18px rgba(41,42,32,0.28);
+    --shadow-deep: 0 30px 60px -20px rgba(35,42,27,0.45);
+  }
+  :root:not([data-theme="light"]){ }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ }
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth; overflow-x:hidden; width:100%;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Montserrat', -apple-system, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    width:100%;
+  }
+  img{max-width:100%; display:block;}
+
+  /* ---------- IMAGE FRAME (safe, responsive, never breaks layout) ---------- */
+  .img-frame{
+    position:relative; width:100%; overflow:hidden;
+    background:var(--cream-deep);
+  }
+  .img-frame img{
+    position:absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%;
+    object-fit:cover; display:block; border:0;
+  }
+  .img-frame.no-bg{ background:transparent; }
+  h1,h2,h3{font-family:'Poppins', sans-serif; margin:0; letter-spacing:-0.01em; color:var(--olive-950);}
+  p{margin:0; line-height:1.55; color:var(--ink-soft);}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 22px;}
+  section{position:relative;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:clamp(10.5px,2.9vw,13px); font-weight:600; color:var(--terracotta-deep);
+    background:var(--terracotta-tint); white-space:nowrap;
+    padding:7px 16px 7px 12px; border-radius:100px;
+  }
+  .eyebrow svg{width:14px;height:14px;}
+  .btn-buy{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    width:100%;
+    background:linear-gradient(180deg,#DE8A54,var(--terracotta-deep));
+    color:#fff; font-family:'Montserrat',sans-serif; font-weight:800;
+    font-size:17px; letter-spacing:0.01em;
+    border:none; border-radius:100px; padding:20px 24px;
+    box-shadow: 0 16px 32px -10px rgba(163,80,42,0.55), inset 0 1px 0 rgba(255,255,255,0.25);
+    cursor:pointer; text-decoration:none;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn-buy:hover{ transform:translateY(-2px); box-shadow:0 20px 38px -10px rgba(163,80,42,0.6);}
+  .btn-buy:active{ transform:translateY(0px) scale(.99); }
+
+  /* ---------- HERO ---------- */
+  .urgency-bar{
+    background:linear-gradient(180deg,#C4442E,#A6331F);
+    color:#fff; text-align:center; padding:11px 16px;
+    font-size:12.5px; font-weight:800; letter-spacing:0.05em;
+  }
+  .hero{ padding:44px 0 46px; background:
+    radial-gradient(120% 90% at 50% -10%, #E9ECD6 0%, transparent 60%),
+    var(--cream); }
+  .hero-grid{ display:flex; flex-direction:column; align-items:center; text-align:center; gap:6px; max-width:720px; margin:0 auto; }
+  .hero-copy{ display:flex; flex-direction:column; align-items:center; }
+  .hero-copy .eyebrow{margin-bottom:22px;}
+  .hero h1{
+    font-weight:700;
+    font-size:clamp(27px,6.8vw,44px); line-height:1.18;
+    letter-spacing:-0.01em; max-width:21ch;
+  }
+  .hero-sub{ margin:18px auto 0; font-size:clamp(15px,4vw,17.5px); line-height:1.5; max-width:36ch; }
+  .benefit-cards{ list-style:none; margin:30px auto 0; padding:0; display:grid; gap:10px; max-width:560px; width:100%; }
+  .benefit-cards li{
+    display:flex; align-items:center; gap:12px; font-size:14.5px; color:var(--olive-950); font-weight:600;
+    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-sm);
+    padding:14px 16px; box-shadow:0 10px 22px -14px rgba(41,42,32,0.25);
+    text-align:left;
+  }
+  .check{ flex:0 0 auto; width:26px;height:26px; border-radius:50%; background:var(--olive-600); display:flex; align-items:center; justify-content:center;}
+  .check svg{width:13px;height:13px;stroke:#fff;}
+
+  .hero-visual{ width:100%; }
+  .hero-mockup-wrap{ max-width:480px; margin:0 auto; }
+  .hero-mockup-frame{ width:100%; padding-top:75%; border-radius:0; }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .sec-head{ text-align:center; max-width:640px; margin:0 auto 34px; }
+  .sec-head h2{ font-size:clamp(24px,5.4vw,34px); font-weight:600; line-height:1.16; }
+  .sec-head p{ margin-top:12px; font-size:15.5px; }
+
+  /* ---------- IDENTIFICATION ---------- */
+  .identify{ padding:64px 0 56px; background:var(--paper); }
+  .identify-intro{ max-width:600px; margin:0 auto 40px; text-align:center; }
+  .identify-intro h2{ font-size:clamp(24px,5.6vw,32px); }
+  .identify-intro p{ margin-top:16px; font-size:16px; }
+  .pain-grid{ display:grid; gap:14px; }
+  .pain-card{
+    background:var(--cream); border:1px solid var(--line); border-radius:var(--radius-md);
+    padding:26px 22px; display:flex; flex-direction:column; gap:14px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .pain-card .pi{ width:46px;height:46px; border-radius:13px; display:flex; align-items:center; justify-content:center; flex:0 0 auto;}
+  .pain-card .pi svg{ width:23px; height:23px; stroke-width:2; }
+  .pain-card .pi-olive{ background:var(--olive-tint); }
+  .pain-card .pi-olive svg{ stroke:var(--olive-600); }
+  .pain-card .pi-terracotta{ background:var(--terracotta-tint); }
+  .pain-card .pi-terracotta svg{ stroke:var(--terracotta-deep); }
+  .pain-card .pi-gold{ background:#F6E6C8; }
+  .pain-card .pi-gold svg{ stroke:#96691E; }
+  .pain-card h3{ font-size:17px; font-weight:700; }
+  .pain-card p{ font-size:14.5px; }
+  .pain-card:hover{ transform:translateY(-3px); box-shadow:var(--shadow-soft); }
+  .identify-close{
+    margin:36px auto 0; max-width:600px;
+    display:flex; align-items:center; gap:16px; text-align:left;
+    background:linear-gradient(135deg,var(--olive-800),var(--olive-950));
+    border-radius:var(--radius-md); padding:24px 26px;
+    box-shadow:var(--shadow-soft);
+  }
+  .identify-close-icon{
+    width:44px; height:44px; border-radius:50%; flex:0 0 auto;
+    background:rgba(255,255,255,0.14); display:flex; align-items:center; justify-content:center;
+  }
+  .identify-close-icon svg{ width:22px; height:22px; }
+  .identify-close p{ font-size:16.5px; font-weight:500; color:#F3F5EA; line-height:1.4; }
+  .identify-close strong{ color:#fff; font-weight:700; }
+  @media (max-width:480px){
+    .identify-close{ flex-direction:column; text-align:center; padding:26px 22px; gap:14px; }
+    .identify-close p{ font-size:15.5px; }
+  }
+
+  /* ---------- RECIPE GALLERY ---------- */
+  .gallery{ padding:60px 0 52px; background:var(--cream); }
+  .cat-scroller{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:14px;
+  }
+  .cat-card{
+    background:var(--paper); border-radius:var(--radius-md); overflow:hidden;
+    box-shadow:var(--shadow-soft); position:relative;
+  }
+  .cat-art{ padding-top:100%; }
+  .cat-label{ padding:12px 14px 16px; }
+  .cat-label span{ font-size:13.5px; font-weight:700; color:var(--olive-950); }
+  .gallery-foot{ text-align:center; margin-top:30px; font-family:'Poppins',sans-serif; font-size:17px; color:var(--olive-950); font-weight:500;}
+
+  /* ---------- PRODUCT ---------- */
+  .product{ padding:62px 0; background:var(--paper); }
+  .product-grid{ display:grid; gap:34px; align-items:center; }
+  .product-mock{ display:flex; justify-content:center; }
+  .open-book{ width:100%; max-width:340px; filter:drop-shadow(0 26px 40px rgba(35,42,27,0.28)); }
+  .open-book-frame{ width:100%; padding-top:76.5%; }
+  .product-copy .sec-head{ text-align:center; margin:0 0 24px; max-width:none; }
+  .product-copy p.lead{ font-size:16px; margin-bottom:22px; }
+  .feat-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .feat-pill{
+    background:var(--olive-tint); border-radius:100px; padding:12px 16px;
+    font-size:12.5px; font-weight:700; color:var(--olive-800); text-align:center;
+    display:flex; align-items:center; justify-content:center; line-height:1.25;
+  }
+
+  /* ---------- BONUS ---------- */
+  .bonus{ padding:62px 0 54px; background:var(--olive-tint); }
+  .bonus-list{ display:grid; grid-template-columns:1fr; gap:18px; }
+  .bonus-card{
+    background:var(--paper); border-radius:var(--radius-md); box-shadow:var(--shadow-soft);
+    padding:28px 20px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:14px;
+  }
+  .bonus-mock-frame{ width:100%; padding-top:75%; border-radius:var(--radius-sm); }
+  .bonus-num{ font-size:9px; letter-spacing:.06em; color:var(--ink-soft); text-transform:uppercase; text-align:center; font-weight:700;}
+  .bonus-body h3{ font-size:15px; font-weight:800; line-height:1.32; text-transform:uppercase; letter-spacing:0.01em; }
+  .bonus-price{ display:flex; align-items:baseline; justify-content:center; gap:8px; }
+  .bonus-price .old{ text-decoration:line-through; color:#a7a795; font-size:13px; font-weight:600;}
+  .bonus-price .tag{ font-size:11px; font-weight:800; color:var(--terracotta-deep); background:var(--terracotta-tint); padding:3px 9px; border-radius:100px;}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials{ padding:60px 0 54px; background:var(--paper); }
+  .wa-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px 14px; max-width:520px; margin:0 auto; }
+  .wa-card{
+    background:#F0F5EA; border:2px dashed #B9C79A; border-radius:20px;
+    padding-top:153.68%;
+  }
+  .wa-card:nth-child(1){ transform:rotate(-3deg); }
+  .wa-card:nth-child(2){ transform:rotate(2.5deg); }
+  .wa-card:nth-child(3){ transform:rotate(2deg); }
+  .wa-card:nth-child(4){ transform:rotate(-2.5deg); }
+
+  /* ---------- OFFER ---------- */
+  .offer{ padding:66px 0 60px; background:linear-gradient(180deg,var(--olive-950),#1B2114); color:#fff; }
+  .offer .sec-head h2{ color:#fff; }
+  .offer-mockup-wrap{ max-width:400px; margin:0 auto 34px; }
+  .offer-mockup{ width:100%; padding-top:75%; }
+  .summary-list{ list-style:none; margin:0 auto 30px; padding:0; max-width:440px; display:flex; flex-direction:column; gap:11px; }
+  .summary-list li{ display:flex; align-items:center; gap:12px; font-size:14.5px; color:#EDEFDD; font-weight:500; padding-bottom:11px; border-bottom:1px solid rgba(255,255,255,0.1); }
+  .summary-list li:last-child{ border-bottom:none; }
+  .summary-list .plus{ width:22px;height:22px;border-radius:50%; background:rgba(255,255,255,0.1); display:flex;align-items:center;justify-content:center; font-size:13px; color:var(--terracotta-tint); flex:0 0 auto;}
+  .value-block{ text-align:center; margin-bottom:8px; }
+  .value-label{ font-size:12.5px; letter-spacing:0.06em; color:#B7C1A0; font-weight:600; }
+  .value-price{ font-family:'Poppins',sans-serif; font-size:30px; color:#9AA688; text-decoration:line-through; margin-top:6px; font-weight:600;}
+  .offer-divider{ display:flex; align-items:center; gap:12px; max-width:280px; margin:18px auto; }
+  .offer-divider span{ flex:1; height:1px; background:rgba(255,255,255,0.18); }
+  .offer-divider p{ color:#B7C1A0; font-size:12px; font-weight:700; letter-spacing:0.08em; }
+  .price-today{ text-align:center; margin-bottom:28px; }
+  .price-today .today-label{ display:inline-block; background:var(--terracotta); color:#fff; font-size:12px; font-weight:800; letter-spacing:0.05em; padding:6px 14px; border-radius:100px; margin-bottom:14px;}
+  .price-today .big-price{ font-family:'Poppins',sans-serif; font-weight:800; font-size:clamp(52px,15vw,72px); color:#fff; line-height:1; }
+  .price-today .big-price sup{ font-size:0.4em; top:-1.1em; }
+  .price-today .terms{ margin-top:10px; font-size:13px; color:#B7C1A0; font-weight:700; letter-spacing:0.03em;}
+  .offer-checks{ list-style:none; margin:26px 0 22px; padding:0; display:flex; flex-direction:column; gap:10px; max-width:340px; margin-left:auto; margin-right:auto;}
+  .offer-checks li{ display:flex; align-items:center; gap:10px; font-size:14px; color:#EDEFDD; font-weight:600;}
+  .offer-checks .check2{ width:20px;height:20px;border-radius:50%; background:rgba(255,255,255,0.14); display:flex;align-items:center;justify-content:center; flex:0 0 auto;}
+  .offer-checks .check2 svg{ width:11px;height:11px; stroke:#F3DCC8; }
+  .cta-note{ text-align:center; font-size:12px; color:#8E9A79; margin-top:14px; max-width:320px; margin-left:auto; margin-right:auto; }
+  .trust-row{ display:flex; justify-content:center; gap:18px; margin-top:22px; flex-wrap:wrap; }
+  .trust-row span{ font-size:12px; color:#B7C1A0; font-weight:600; display:flex; align-items:center; gap:6px;}
+  .email-note{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    max-width:400px; margin:22px auto 0;
+    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14);
+    border-radius:16px; padding:14px 20px;
+    color:#EDEFDD; font-size:12.5px; font-weight:600; text-align:center;
+  }
+  .email-note svg{ width:17px; height:17px; flex:0 0 auto; color:var(--terracotta-tint); }
+
+  /* ---------- GUARANTEE ---------- */
+  .guarantee{ padding:56px 0; background:var(--cream); }
+  .guarantee-card{
+    max-width:460px; margin:0 auto; background:var(--paper); border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-soft); padding:36px 28px; text-align:center;
+  }
+  .seal-frame{ width:120px; padding-top:120px; margin:0 auto 20px; border-radius:50%; }
+  .guarantee-card h3{ font-size:21px; margin-bottom:10px; }
+  .guarantee-card p{ font-size:14.5px; }
+
+  /* ---------- FAQ ---------- */
+  .faq{ padding:58px 0 60px; background:var(--paper); }
+  .faq-list{ max-width:640px; margin:0 auto; display:flex; flex-direction:column; gap:10px; }
+  details{ background:var(--cream); border-radius:var(--radius-sm); border:1px solid var(--line); overflow:hidden; }
+  summary{
+    list-style:none; cursor:pointer; padding:18px 50px 18px 20px; position:relative;
+    font-weight:700; font-size:14.5px; color:var(--olive-950);
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:""; position:absolute; right:18px; top:50%; width:11px; height:11px;
+    border-right:2px solid var(--olive-600); border-bottom:2px solid var(--olive-600);
+    transform:translateY(-65%) rotate(45deg); transition:transform .25s ease;
+  }
+  details[open] summary::after{ transform:translateY(-35%) rotate(-135deg); }
+  .faq-a{ padding:0 20px 18px; font-size:14px; }
+
+  /* ---------- EXPERT ---------- */
+  .expert{ padding:60px 0 66px; background:var(--olive-tint); }
+  .expert-grid{ display:grid; gap:28px; align-items:center; }
+  .expert-photo{ display:flex; justify-content:center; }
+  .expert-photo .frame-wrap{ width:240px; }
+  .expert-photo .frame{
+    width:100%; padding-top:125%; border-radius:24px;
+    box-shadow:var(--shadow-soft);
+  }
+  .expert-copy .eyebrow{ margin-bottom:14px; }
+  .expert-copy h2{ font-size:clamp(21px,4.6vw,26px); font-weight:600; line-height:1.28; margin-bottom:18px; }
+  .expert-copy .quote{ font-size:16px; font-style:italic; line-height:1.55; color:var(--ink-soft); }
+  .signature{ font-family:'Caveat',cursive; font-weight:700; font-size:34px; color:var(--olive-800); margin-top:18px; }
+
+  /* ---------- FOOTER ---------- */
+  footer{ padding:36px 0 30px; background:var(--olive-950); text-align:center; }
+  footer p{ color:#B7C1A0; font-size:12.5px; margin-bottom:6px; }
+  .foot-links{ display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin-top:14px; }
+  .foot-links a{ color:#9AA688; font-size:12px; text-decoration:none; font-weight:600; }
+  .foot-links a:hover{ color:#fff; }
+
+  @media (min-width:640px) and (max-width:859px){
+    .bonus-list{ grid-template-columns:repeat(2,1fr); }
+  }
+  @media (min-width:860px){
+    .hero-grid{ gap:10px; }
+    .hero-sub{ font-size:18.5px; }
+    .benefit-cards{ grid-template-columns:repeat(3,1fr); }
+    .cat-scroller{ grid-template-columns:repeat(4,1fr); }
+    .product-grid{ grid-template-columns:0.9fr 1.1fr; gap:60px; }
+    .pain-grid{ grid-template-columns:repeat(3,1fr); }
+    .bonus-list{ grid-template-columns:repeat(3,1fr); }
+    .expert-grid{ grid-template-columns:0.8fr 1.2fr; gap:56px; }
+    .wa-grid{ grid-template-columns:repeat(4,1fr); max-width:820px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<div class="urgency-bar">OFERTA DISPONIBLE SOLO HOY</div>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+        +100 RECETAS VEGETARIANAS EN AIR FRYER
+      </span>
+      <h1>Deja de comer siempre lo mismo solo porque elegiste ser vegetariano</h1>
+      <p class="hero-sub">Descubre +100 recetas fáciles, crujientes y llenas de sabor para preparar en tu Air Fryer y disfrutar comidas diferentes todos los días.</p>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-mockup-wrap">
+        <div class="img-frame no-bg hero-mockup-frame">
+          <img src="images/mockuphero.webp" alt="+100 Recetas Vegetarianas en Air Fryer">
+        </div>
+      </div>
+
+      <ul class="benefit-cards">
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Ingredientes fáciles de encontrar</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Perfectas incluso si eres principiante</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Ideas para cualquier momento del día</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= IDENTIFICACIÓN ================= -->
+<section class="identify">
+  <div class="wrap">
+    <div class="identify-intro">
+      <h2>Ya no tienes que quedarte sin ideas sobre qué cocinar</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pi pi-olive"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12c0-5 3-9 6-9s6 4 6 9-3 9-6 9-6-4-6-9z"/><path d="M4 12h16"/></svg></div>
+        <h3>Siempre las mismas comidas</h3>
+        <p>Ensaladas, verduras y los mismos platos una y otra vez.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pi pi-terracotta"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a3 3 0 0 0 6 0V3M9 9v12M18 3c-2 1-3 3-3 6s1 4 3 5v7"/></svg></div>
+        <h3>Ingredientes difíciles</h3>
+        <p>Recetas que exigen cosas que ni siquiera encuentras en el supermercado.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pi pi-gold"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <h3>Demasiado trabajo</h3>
+        <p>Muchos pasos para terminar preparando algo que no te entusiasma.</p>
+      </div>
+    </div>
+    <div class="identify-close">
+      <span class="identify-close-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+      </span>
+      <p>Ahora tienes <strong>+100 recetas vegetarianas</strong> fáciles, variadas y deliciosas para preparar en tu Air Fryer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALERÍA VISUAL ================= -->
+<section class="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Mira todo lo que puedes preparar</h2>
+    </div>
+    <div class="cat-scroller">
+      <div class="cat-card">
+        <div class="cat-art img-frame"><img src="images/desayunos.webp" alt="Desayunos"></div>
+        <div class="cat-label"><span>Desayunos</span></div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-art img-frame"><img src="images/almuerzos.webp" alt="Almuerzos"></div>
+        <div class="cat-label"><span>Almuerzos</span></div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-art img-frame"><img src="images/cenas.webp" alt="Cenas rápidas"></div>
+        <div class="cat-label"><span>Cenas rápidas</span></div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-art img-frame"><img src="images/hamburguesas.webp" alt="Hamburguesas y carnes vegetarianas"></div>
+        <div class="cat-label"><span>Hamburguesas y "carnes" vegetarianas</span></div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-art img-frame"><img src="images/croquetas.webp" alt="Croquetas y snacks crujientes"></div>
+        <div class="cat-label"><span>Croquetas y snacks crujientes</span></div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-art img-frame"><img src="images/verduras.webp" alt="Verduras y guarniciones"></div>
+        <div class="cat-label"><span>Verduras y guarniciones</span></div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-art img-frame"><img src="images/pizzas.webp" alt="Pizzas, tacos y bocados"></div>
+        <div class="cat-label"><span>Pizzas, tacos y bocados</span></div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-art img-frame"><img src="images/postres.webp" alt="Postres"></div>
+        <div class="cat-label"><span>Postres</span></div>
+      </div>
+    </div>
+    <p class="gallery-foot">Más variedad. Más sabor. Menos tiempo pensando qué cocinar.</p>
+  </div>
+</section>
+
+<!-- ================= PRODUCTO ================= -->
+<section class="product">
+  <div class="wrap product-grid">
+    <div class="product-mock">
+      <div class="open-book">
+        <div class="img-frame no-bg open-book-frame">
+          <img src="images/livro.webp" alt="+100 Recetas Vegetarianas en Air Fryer - vista interna">
+        </div>
+      </div>
+    </div>
+    <div class="product-copy">
+      <div class="sec-head"><h2>+100 recetas para salir de la rutina</h2></div>
+      <div class="feat-grid">
+        <div class="feat-pill">Todo paso a paso</div>
+        <div class="feat-pill">Ingredientes simples</div>
+        <div class="feat-pill">Para principiantes</div>
+        <div class="feat-pill">Dulces y saladas</div>
+        <div class="feat-pill" style="grid-column:1/-1;">Para todos los días</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BONOS ================= -->
+<section class="bonus">
+  <div class="wrap">
+    <div class="sec-head"><h2>Y hoy también recibes 5 bonos</h2></div>
+    <div class="bonus-list">
+
+      <div class="bonus-card">
+        <div class="img-frame bonus-mock-frame">
+        <img src="images/bono1.webp" alt="Bono 1: 25 recetas vegetarianas con solo 5 ingredientes">
+        </div>
+        <div class="bonus-body">
+          <h3>25 recetas vegetarianas con solo 5 ingredientes</h3>
+          <div class="bonus-price"><span class="old">US$12</span><span class="tag">Gratis</span></div>
+        </div>
+      </div>
+
+      <div class="bonus-card">
+        <div class="img-frame bonus-mock-frame">
+        <img src="images/bono2.webp" alt="Bono 2: 30 carnes vegetarianas caseras">
+        </div>
+        <div class="bonus-body">
+          <h3>30 "carnes" vegetarianas caseras</h3>
+          <div class="bonus-price"><span class="old">US$17</span><span class="tag">Gratis</span></div>
+        </div>
+      </div>
+
+      <div class="bonus-card">
+        <div class="img-frame bonus-mock-frame">
+        <img src="images/bono3.webp" alt="Bono 3: 40 comidas vegetarianas que no parecen vegetarianas">
+        </div>
+        <div class="bonus-body">
+          <h3>40 comidas vegetarianas que no parecen vegetarianas</h3>
+          <div class="bonus-price"><span class="old">US$19</span><span class="tag">Gratis</span></div>
+        </div>
+      </div>
+
+      <div class="bonus-card">
+        <div class="img-frame bonus-mock-frame">
+        <img src="images/bono4.webp" alt="Bono 4: 30 recetas vegetarianas sin tofu ni soja">
+        </div>
+        <div class="bonus-body">
+          <h3>30 recetas vegetarianas sin tofu ni soja</h3>
+          <div class="bonus-price"><span class="old">US$15</span><span class="tag">Gratis</span></div>
+        </div>
+      </div>
+
+      <div class="bonus-card">
+        <div class="img-frame bonus-mock-frame">
+        <img src="images/bono5.webp" alt="Bono 5: 35 recetas vegetarianas para congelar y tener siempre listas">
+        </div>
+        <div class="bonus-body">
+          <h3>35 recetas vegetarianas para congelar y tener siempre listas</h3>
+          <div class="bonus-price"><span class="old">US$17</span><span class="tag">Gratis</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIOS ================= -->
+<section class="testimonials">
+  <div class="wrap">
+    <div class="sec-head"><h2>Mira lo que dicen quienes ya probaron las recetas</h2></div>
+    <div class="wa-grid">
+      <div class="wa-card img-frame">
+        <img src="images/depo1.webp" alt="Testimonio 1">
+      </div>
+      <div class="wa-card img-frame">
+        <img src="images/depo2.webp" alt="Testimonio 2">
+      </div>
+      <div class="wa-card img-frame">
+        <img src="images/depo3.webp" alt="Testimonio 3">
+      </div>
+      <div class="wa-card img-frame">
+        <img src="images/depo4.webp" alt="Testimonio 4">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OFERTA PRINCIPAL ================= -->
+<section class="offer" id="oferta">
+  <div class="wrap">
+    <div class="sec-head"><h2>Todo esto es tuyo hoy</h2></div>
+
+    <div class="offer-mockup-wrap">
+      <div class="img-frame no-bg offer-mockup">
+        <img src="images/mockupofer.webp" alt="+100 Recetas Vegetarianas en Air Fryer + Bonos">
+      </div>
+    </div>
+
+    <ul class="summary-list">
+      <li><span class="plus">+</span>+100 Recetas Vegetarianas en Air Fryer</li>
+      <li><span class="plus">+</span>25 Recetas con Solo 5 Ingredientes</li>
+      <li><span class="plus">+</span>30 "Carnes" Vegetarianas Caseras</li>
+      <li><span class="plus">+</span>40 Comidas que No Parecen Vegetarianas</li>
+      <li><span class="plus">+</span>30 Recetas Sin Tofu ni Soja</li>
+      <li><span class="plus">+</span>35 Recetas para Congelar</li>
+    </ul>
+
+    <div class="value-block">
+      <div class="value-label">VALOR TOTAL + BONOS</div>
+      <div class="value-price">US$87</div>
+    </div>
+
+    <div class="offer-divider"><span></span><p>OFERTA ESPECIAL DE HOY</p><span></span></div>
+
+    <div class="price-today">
+      <span class="today-label">SOLO</span>
+      <div class="big-price">US$7<sup>,90</sup></div>
+      <div class="terms">PAGO ÚNICO · ACCESO VITALICIO</div>
+    </div>
+
+    <a href="#" class="btn-buy" id="ctaMain">
+      QUIERO MIS +100 RECETAS
+    </a>
+    <p class="cta-note">El valor será convertido automáticamente a tu moneda local en la página de pago.</p>
+
+    <div class="trust-row">
+      <span>🔒 Pago 100% seguro</span>
+      <span>⚡ Acceso inmediato</span>
+      <span>🛡️ Garantía de 30 días</span>
+    </div>
+
+    <div class="email-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
+      <span>Recibe tu acceso inmediatamente por correo electrónico</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GARANTÍA ================= -->
+<section class="guarantee">
+  <div class="wrap">
+    <div class="guarantee-card">
+      <div class="img-frame seal-frame">
+        <img src="images/garantia.webp" alt="Garantía de 30 días">
+      </div>
+      <h3>Pruébalo sin riesgo</h3>
+      <p>Tu compra está protegida durante 30 días. Tendrás tiempo para conocer el contenido y comprobar si realmente es para ti.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERT ================= -->
+<section class="expert">
+  <div class="wrap expert-grid">
+    <div class="expert-photo">
+      <div class="frame-wrap">
+        <div class="frame img-frame">
+          <img src="images/expert.webp" alt="Camille Morel, nutricionista">
+        </div>
+      </div>
+    </div>
+    <div class="expert-copy">
+      <span class="eyebrow">NUTRICIONISTA COLEGIADA Nº CV01751</span>
+      <h2>Revisado y aprobado por la nutricionista Camille Morel</h2>
+      <p class="quote">"Soy vegetariana desde hace más de 12 años y sé lo frustrante que es terminar comiendo siempre lo mismo. Por eso revisé esta colección para que tengas recetas fáciles, variadas y realmente deliciosas para el día a día."</p>
+      <div class="signature">Camille Morel</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-head"><h2>Preguntas frecuentes</h2></div>
+    <div class="faq-list">
+      <details>
+        <summary>¿Cómo voy a recibir mi compra?</summary>
+        <p class="faq-a">Recibirás el acceso a las recetas por correo electrónico, de forma inmediata después de confirmar tu pago.</p>
+      </details>
+      <details>
+        <summary>¿Es un producto físico?</summary>
+        <p class="faq-a">No. Es un producto 100% digital y recibirás el acceso después de completar tu compra.</p>
+      </details>
+      <details>
+        <summary>¿Necesito saber cocinar?</summary>
+        <p class="faq-a">No. Las recetas fueron pensadas para ser fáciles incluso para principiantes.</p>
+      </details>
+      <details>
+        <summary>¿Necesito una Air Fryer específica?</summary>
+        <p class="faq-a">No. Puedes adaptar las recetas a la capacidad y potencia de tu freidora de aire.</p>
+      </details>
+      <details>
+        <summary>¿El pago es único?</summary>
+        <p class="faq-a">Sí. Pagas una sola vez. No hay mensualidades.</p>
+      </details>
+      <details>
+        <summary>¿Tengo garantía?</summary>
+        <p class="faq-a">Sí. Tu compra está protegida durante 30 días.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <p style="color:#fff;font-weight:700;">+100 Recetas Vegetarianas en Air Fryer</p>
+    <p>Todos los derechos reservados.</p>
+    <div class="foot-links">
+      <a href="privacidad.html">Política de Privacidad</a>
+      <a href="terminos.html">Términos y Condiciones</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
